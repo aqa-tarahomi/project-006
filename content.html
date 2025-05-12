@@ -1,0 +1,130 @@
+<!-- FILE: content.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Content</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="d-flex">
+    <nav class="d-none d-md-block sidebar" id="sidebarStatic">
+      <div class="sidebar-header">
+        <h4 class="text-primary fw-bold">Admin</h4>
+        <button class="btn btn-sm btn-outline-secondary d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">☰</button>
+      </div>
+      <ul class="nav flex-column">
+        <li><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li><a href="users.html" class="nav-link">Users</a></li>
+        <li><a href="content.html" class="nav-link active">Content</a></li>
+        <li><a href="media.html" class="nav-link">Media</a></li>
+        <li><a href="support.html" class="nav-link">Support</a></li>
+        <li><a href="#" class="nav-link text-danger">Logout</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Offcanvas Sidebar for Mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-primary">Admin Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li><a href="users.html" class="nav-link">Users</a></li>
+          <li><a href="content.html" class="nav-link active">Content</a></li>
+          <li><a href="media.html" class="nav-link">Media</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+          <li><a href="#" class="nav-link text-danger">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1">
+      <nav class="navbar px-4 py-2">
+        <div class="container-fluid">
+          <span class="navbar-brand">Content Management</span>
+          <button class="btn btn-outline-secondary d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">☰</button>
+        </div>
+      </nav>
+
+      <main class="container-fluid py-4 px-4">
+        <section class="card">
+          <h5 class="mb-4">Create or Edit Content</h5>
+          <form onsubmit="showToast(event)">
+            <!-- Title & Category & Date -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Post Title</label>
+                <input type="text" class="form-control" placeholder="Enter title..." required />
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" required>
+                  <option disabled selected>Select...</option>
+                  <option>Blog</option>
+                  <option>Updates</option>
+                  <option>News</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Publish Date</label>
+                <input type="datetime-local" class="form-control" />
+              </div>
+            </div>
+
+            <!-- Content Body -->
+            <div class="mb-3">
+              <label class="form-label">Body</label>
+              <textarea class="form-control" rows="6" placeholder="Write your post..." required></textarea>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-3">
+              <label class="form-label">Attach File or Image</label>
+              <input type="file" class="form-control" id="uploadFile" onchange="previewFile()" />
+              <div id="filePreviewContainer" class="mt-2" style="display: none;">
+                <div id="filePreview" class="text-muted small"></div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Publish</button>
+              <button type="button" class="btn btn-outline-secondary">Save as Draft</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="text-center py-3 border-top bg-white">
+        <small>© 2025 Admin Panel • <a href="#">Privacy</a> • <a href="#">Terms</a></small>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <script>
+    function previewFile() {
+      const input = document.getElementById('uploadFile');
+      const preview = document.getElementById('filePreview');
+      const container = document.getElementById('filePreviewContainer');
+
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        preview.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+        preview.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>

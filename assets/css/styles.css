@@ -1,0 +1,240 @@
+/* FILE: assets/css/styles.css */
+
+/* GENERAL RESET */
+body {
+    background-color: #f5f6f8;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 16px;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    /* width: 260px; */
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    padding: 1.5rem 1rem;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+    overflow: hidden;
+  }
+  
+  .sidebar .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar .nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.2rem;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #111;
+  }
+  
+  /* MAIN CONTENT */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f6f8;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* PAGE SECTIONS */
+  section.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  h5 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* TABLES */
+  .table th,
+  .table td {
+    vertical-align: middle;
+    font-size: 15px;
+  }
+  
+  .table thead th {
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* FORM ELEMENTS */
+  label.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  input.form-control,
+  textarea.form-control,
+  select.form-select {
+    border: 1px solid #ccc;
+    font-size: 15px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+  }
+  
+  input[type="file"] {
+    border: none;
+    background-color: #f8f9fa;
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .form-check-label {
+    font-size: 15px;
+  }
+  
+  /* BUTTONS */
+  .btn {
+    font-size: 14px;
+    padding: 0.45rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  .btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  .btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  /* TOGGLES + SWITCHES */
+  .form-switch .form-check-input {
+    height: 1.4rem;
+    width: 2.5rem;
+  }
+  
+  /* DARK MODE */
+  .dark-mode {
+    background-color: #181a1b !important;
+    color: #e1e1e1 !important;
+  }
+  
+  .dark-mode .card,
+  .dark-mode .navbar,
+  .dark-mode .sidebar,
+  .dark-mode .table {
+    background-color: #232526 !important;
+    color: #e1e1e1 !important;
+    border-color: #393c3e !important;
+  }
+  
+  .dark-mode input,
+  .dark-mode textarea,
+  .dark-mode select {
+    background-color: #2d2f31 !important;
+    color: #fff !important;
+    border-color: #444;
+  }
+  
+  .dark-mode .nav-link {
+    color: #ddd !important;
+  }
+  
+  .dark-mode .nav-link.active {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+  }
+  
+  /* PREVIEW IMAGE */
+  #filePreview img,
+  #ogImagePreview {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* STATUS BADGES */
+  .badge {
+    font-size: 13px;
+    padding: 0.4em 0.65em;
+    border-radius: 0.35rem;
+  }
+  
+  /* FOOTER */
+  footer {
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    font-size: 14px;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      z-index: 1050;
+      height: 100%;
+      background: #fff;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  
+    .main-content {
+      padding-left: 0;
+    }
+  }
+/* Sidebar display */
+@media (max-width: 767.98px) {
+  .sidebar {
+    display: none !important;
+  }
+}
+  
