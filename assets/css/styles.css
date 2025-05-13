@@ -231,11 +231,23 @@ body {
       padding-left: 0;
       width: 100%;
     }
+    .container-fluid{
+      padding-left: calc(var(--bs-gutter-x) * .5) !important;
+      padding-right:calc(var(--bs-gutter-x) * .5) !important;
+      width: 95% !important;
+    }
+    .navbar{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
   }
+
 /* Sidebar display */
 @media (max-width: 767.98px) {
   .sidebar {
     display: none !important;
   }
 }
-  
+  .container-fluid{
+    width: 94% ;
+  }
