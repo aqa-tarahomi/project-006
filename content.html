@@ -54,7 +54,9 @@
 
       <main class="container-fluid py-4 px-5">
           <h5 class="mb-4">Create or Edit Content</h5>
-          <form onsubmit="showToast(event)">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form onsubmit="showToast(event)">
             <!-- Title & Category & Date -->
             <div class="row mb-3">
               <div class="col-md-6">
@@ -97,6 +99,8 @@
               <button type="button" class="btn btn-outline-secondary">Save as Draft</button>
             </div>
           </form>
+            </div>
+          </div>
       </main>
 
       <footer class="text-center py-3 border-top bg-white">
